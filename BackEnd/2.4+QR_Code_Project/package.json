@@ -1,0 +1,11 @@
+{
+  "type": "module",
+  "dependencies": {
+    "inquirer": "^9.2.11",
+    "qr-image": "^3.2.0"
+  },
+  "name": "web-development-projects",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {}
+}
