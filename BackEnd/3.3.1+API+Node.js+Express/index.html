@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API Testing Tool</title>
+</head>
+<body>
+  <h1>API Testing Tool</h1>
+  <form id="apiRequestForm">
+    <label for="method">HTTP Method:</label>
+    <input type="text" id="method" name="method" required><br><br>
+    <label for="url">URL:</label>
+    <input type="text" id="url" name="url" required><br><br>
+    <label for="headers">Headers:</label>
+    <textarea id="headers" name="headers"></textarea><br><br>
+    <label for="data">Request Data:</label>
+    <textarea id="data" name="data"></textarea><br><br>
+    <input type="submit" value="Send Request">
+  </form>
+  <div id="response"></div>
+
+  <script>
+    const form = document.getElementById('apiRequestForm');
+    const responseDiv = document.getElementById('response');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const method = form.method.value;
+      const url = form.url.value;
+      const headers = JSON.parse(form.headers.value || '{}');
+      const data = form.data.value || null;
+
+      try {
+        const response = await fetch('/api/request', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ method, url, headers, data }),
+        });
+        const responseData = await response.json();
+        responseDiv.innerHTML = JSON.stringify(responseData, null, 2);
+      } catch (error) {
+        console.error(error);
+        responseDiv.innerHTML = 'Error occurred. Check the console for details.';
+      }
+    });
+  </script>
+</body>
+</html>
