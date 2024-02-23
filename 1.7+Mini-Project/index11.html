@@ -1,0 +1,51 @@
+<!-- Create a checkout form: Design a multi-step checkout form for an e-commerce website, including fields for 
+shipping address, payment details, and order summary.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shipping address</title>
+        <link rel="stylesheet" href="styles11.css">
+    </head>
+    <body>
+        <div class="container">
+            <form id="checkout-form">
+            <div class="form-step" id="step1">
+            <h2>Step 1: Shipping Address</h2>
+            <label for="shipping-name">Name:</label>
+            <input type="text" id="shipping-name" name="shipping-name" required>
+            <label for="shipping-address">Address:</label>
+            <input type="text" id="shipping-address" name="shipping-address" required>
+            <label for="shipping-city">City:</label>
+            <input type="text" id="shipping-city" name="shipping-city" required>
+            <button onclick="nextStep()">Next</button>
+        </div>
+
+        <div class="form-step" id="step2">
+            <h2>Step 2: Payment Details</h2>
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" name="card-number" required>
+            <label for="expiry-date">Expiry Date:</label>
+            <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required>
+            <!-- <button onclick="prevStep()">Back</button> -->
+            <button onclick="nextStep()">Next</button>
+        </div>
+
+        <div class="form-step" id="step3">
+            <h2>Step 3: Order Summary</h2>
+            <p>Shipping Address: <span id="summary-shipping-address"></span></p>
+            <p>Payment Details: <span id="summary-payment-details"></span></p>
+            <button onclick="prevStep()">Back</button>
+            <button type="submit">Place Order</button>
+        </div>
+    </form>
+       
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

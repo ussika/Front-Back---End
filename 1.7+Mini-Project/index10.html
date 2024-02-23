@@ -1,0 +1,44 @@
+<!-- Develop a feedback form: Design a feedback form with multiple choice questions, text fields for comments, 
+and a submit button. -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial scale=1.0">
+        <title>feedback <form action=""></form></title>
+        <link rel="stylesheet" href="styles10.css">
+    </head>
+
+    <body>
+            <h2>Feedback Form</h2>
+            <div id="form-container">
+                <form id="feedback-form">
+                    <div class="question">
+                        <p>How satisfied are you with our service?</p>
+                        <label><input type="radio" name="satisfaction" value="very-satisfied"> Very Satisfied</label><br>
+                        <label><input type="radio" name="satisfaction" value="satisfied"> Satisfied</label><br>
+                        <label><input type="radio" name="satisfaction" value="neutral"> Neutral</label><br>
+                        <label><input type="radio" name="satisfaction" value="unsatisfied"> Unsatisfied</label><br>
+                        <label><input type="radio" name="satisfaction" value="very-unsatisfied"> Very Unsatisfied</label><br>
+                    </div>
+                    <div class="question">
+                        <p>How likely are you to recommend us to a friend?</p>
+                        <select name="recommendation">
+                            <option value="very-likely">Very Likely</option>
+                            <option value="likely">Likely</option>
+                            <option value="neutral">Neutral</option>
+                            <option value="unlikely">Unlikely</option>
+                            <option value="very-unlikely">Very Unlikely</option>
+                        </select>
+                    </div>
+                    <div class="question">
+                        <p>Any additional comments or suggestions?</p>
+                        <textarea name="comments" rows="4"></textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+        
+    </div>
+    </body>
+</html>
